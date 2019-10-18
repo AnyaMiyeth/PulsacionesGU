@@ -64,5 +64,19 @@ namespace BLL
             return repositorio.ConsultarTodos();
         }
 
+        public static Int64 Totalizar()
+        {
+           return  repositorio.Totalizar();
+        }
+
+        public static Int64 TotalizarMujeres()
+        {
+            return repositorio.TotalizarMujeres();
+        }
+
+        public static Int64 TotalizarHombres()
+        {
+            return repositorio.TotalizarHombres();
+        }
     }
 }

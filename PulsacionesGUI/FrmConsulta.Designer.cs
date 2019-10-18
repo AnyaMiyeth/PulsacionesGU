@@ -28,48 +28,119 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsulta));
+            this.DtgPersona = new System.Windows.Forms.DataGridView();
+            this.BtnConsultar = new System.Windows.Forms.Button();
+            this.TxtTotal = new System.Windows.Forms.TextBox();
+            this.TxtTotalMujeres = new System.Windows.Forms.TextBox();
+            this.TxtTotalHombres = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.DtgPersona)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // DtgPersona
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(65, 171);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 102;
-            this.dataGridView1.RowTemplate.Height = 40;
-            this.dataGridView1.Size = new System.Drawing.Size(1186, 353);
-            this.dataGridView1.TabIndex = 0;
+            this.DtgPersona.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DtgPersona.Location = new System.Drawing.Point(21, 57);
+            this.DtgPersona.Margin = new System.Windows.Forms.Padding(1);
+            this.DtgPersona.Name = "DtgPersona";
+            this.DtgPersona.RowHeadersWidth = 102;
+            this.DtgPersona.RowTemplate.Height = 40;
+            this.DtgPersona.Size = new System.Drawing.Size(626, 148);
+            this.DtgPersona.TabIndex = 0;
             // 
-            // button1
+            // BtnConsultar
             // 
-            this.button1.Location = new System.Drawing.Point(955, 57);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(179, 74);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BtnConsultar.Image = ((System.Drawing.Image)(resources.GetObject("BtnConsultar.Image")));
+            this.BtnConsultar.Location = new System.Drawing.Point(547, 10);
+            this.BtnConsultar.Margin = new System.Windows.Forms.Padding(1);
+            this.BtnConsultar.Name = "BtnConsultar";
+            this.BtnConsultar.Size = new System.Drawing.Size(67, 31);
+            this.BtnConsultar.TabIndex = 1;
+            this.BtnConsultar.UseVisualStyleBackColor = true;
+            this.BtnConsultar.Click += new System.EventHandler(this.BtnConsultar_Click);
+            // 
+            // TxtTotal
+            // 
+            this.TxtTotal.Location = new System.Drawing.Point(34, 240);
+            this.TxtTotal.Name = "TxtTotal";
+            this.TxtTotal.Size = new System.Drawing.Size(100, 20);
+            this.TxtTotal.TabIndex = 2;
+            // 
+            // TxtTotalMujeres
+            // 
+            this.TxtTotalMujeres.Location = new System.Drawing.Point(184, 240);
+            this.TxtTotalMujeres.Name = "TxtTotalMujeres";
+            this.TxtTotalMujeres.Size = new System.Drawing.Size(100, 20);
+            this.TxtTotalMujeres.TabIndex = 3;
+            // 
+            // TxtTotalHombres
+            // 
+            this.TxtTotalHombres.Location = new System.Drawing.Point(325, 240);
+            this.TxtTotalHombres.Name = "TxtTotalHombres";
+            this.TxtTotalHombres.Size = new System.Drawing.Size(100, 20);
+            this.TxtTotalHombres.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 225);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Total Isncritos";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(196, 225);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Total Mujeres";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(337, 224);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Total Hombres";
             // 
             // FrmConsulta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1368, 692);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(657, 297);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.TxtTotalHombres);
+            this.Controls.Add(this.TxtTotalMujeres);
+            this.Controls.Add(this.TxtTotal);
+            this.Controls.Add(this.BtnConsultar);
+            this.Controls.Add(this.DtgPersona);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "FrmConsulta";
             this.Text = "FrmConsulta";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtgPersona)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView DtgPersona;
+        private System.Windows.Forms.Button BtnConsultar;
+        private System.Windows.Forms.TextBox TxtTotal;
+        private System.Windows.Forms.TextBox TxtTotalMujeres;
+        private System.Windows.Forms.TextBox TxtTotalHombres;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

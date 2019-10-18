@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,40 +17,41 @@ namespace PulsacionesConsolaCapas
 
         static void Main(string[] args)
         {
-            
-            ConsoleKeyInfo continuar;
-            PersonaService PersonaServicio = new PersonaService();
-            do
+
+
+            Int64 x;
+            try
             {
-                Console.Clear();
-               
-                Persona persona = new Persona();
+                using (var sw = new StreamWriter("Text.txt", true, Encoding.ASCII))
+                {
 
-                
-                Console.WriteLine("Digite su Identificacion");
-                persona.Identificacion = Console.ReadLine().ToUpper();
-
-                Console.WriteLine("Digite su Nombre");
-                persona.Nombre = Console.ReadLine().ToUpper();
-
-                Console.WriteLine("Digite su edad");
-                persona.Edad = int.Parse(Console.ReadLine());
-
-                Console.WriteLine("Digite su sexo");
-                persona.Sexo = Console.ReadLine().ToUpper();
-
-                Console.WriteLine($"su pulsaciones {persona.Pulsaciones}");
+                  sw.WriteLine("1;Anya;35;F");
+                    sw.WriteLine("2;Valentina;8;F");
+                }
 
 
-                string Mensaje=PersonaServicio.Guardar(persona);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: " + e.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Executing finally block.");
+            }
+            string[] lines = File.ReadAllLines(@"Text.txt");
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string[] Registro = lines[i].Split(';');
+                var Persona = new Persona();
+                Persona.Identificacion = Registro[0];
+                Persona.Nombre = Registro[1];
+                Persona.Edad= Int32.Parse(Registro[2]);
+                Persona.Sexo= Registro[3];
+                Console.WriteLine(Persona.ToString());
 
-                Console.WriteLine(Mensaje);
-
-                Console.WriteLine("Desea Continuar S/N");
-               continuar= Console.ReadKey();
-
-
-            } while (continuar.KeyChar==('s')|| continuar.KeyChar==('s'));
+            }
+            Console.ReadKey();
         }
     }
 }

@@ -40,13 +40,20 @@ namespace PulsacionesGUI
         private void personaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FrmConsulta frmConsulta = new FrmConsulta();
+            frmConsulta.MdiParent = this;
             frmConsulta.Show();
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             FrmConsulta frmConsulta = new FrmConsulta();
+            frmConsulta.MdiParent = this;
             frmConsulta.Show();
+        }
+
+        private void registrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

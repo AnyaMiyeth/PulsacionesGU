@@ -31,13 +31,19 @@ namespace PulsacionesGUI
 
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private Persona MapearPersona()
         {
             persona = new Persona();
             persona.Identificacion = txtIdentificacion.Text;
             persona.Nombre = txtNombre.Text;
             persona.Edad = int.Parse(txtEdad.Text);
             persona.Sexo = cmbSexo.Text;
+            return persona;
+
+        }
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            Persona persona=MapearPersona();
             string mensaje = PersonaService.Guardar(persona);
             MessageBox.Show(mensaje,"Mensaje de Guardado",MessageBoxButtons.OKCancel,MessageBoxIcon.Information);
             Limpiar();
@@ -105,10 +111,9 @@ namespace PulsacionesGUI
 
         private void BtnCalcularPulsacion_Click(object sender, EventArgs e)
         {
-            if (persona != null)
-            {
-                txtPulsaciones.Text= persona.Pulsacion.ToString();
-            }
+            Persona persona = MapearPersona();
+            txtPulsaciones.Text= persona.Pulsacion.ToString();
+            
         }
     }
 }

@@ -18,10 +18,14 @@ namespace PulsacionesGUI
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnConsultar_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = null;
-               dataGridView1.DataSource= PersonaService.Consultar(); 
+            DtgPersona.DataSource = null;
+            DtgPersona.DataSource= PersonaService.Consultar();
+            TxtTotal.Text = PersonaService.Totalizar().ToString();
+            TxtTotalMujeres.Text = PersonaService.TotalizarMujeres().ToString();
+            TxtTotalHombres.Text = PersonaService.TotalizarHombres().ToString();
+
         }
     }
 }

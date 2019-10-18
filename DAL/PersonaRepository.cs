@@ -38,15 +38,22 @@ namespace DAL
         public Persona Buscar(string identificacion )
         {
 
-            foreach (var item in Personas)
-            {
-                if (item.Identificacion.Equals(identificacion))
-                {
-                    return item;
-                }
-            }
+            return Personas.Find(p => p.Identificacion.Equals(identificacion));
+        }
 
-            return null;
+        public Int64 Totalizar() 
+        {
+            return Personas.Count();
+        }
+
+        public Int64 TotalizarMujeres()
+        {
+            return Personas.Where(p => p.Sexo.Equals( "F")).Count();
+        }
+
+        public Int64 TotalizarHombres()
+        {
+            return Personas.Where(p => p.Sexo.Equals("M")).Count();
         }
 
     }
